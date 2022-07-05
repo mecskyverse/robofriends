@@ -12,15 +12,18 @@ class Apps extends React.Component{
         }
     }
 
-onserchchange(event){
-    console.log(event.target.value);
+onserchchange = (event) => {
+    this.setState({searchfield : event.target.value})
+   
 }
 render(){
+    
+
     return(
     <div className='tc'>
     <h1>RoboFriends</h1>
     <Searchbox searchchange={this.onserchchange}/>
-    <Cardlist robots={this.state.robots}/>
+    <Cardlist robots={filterrobots}/>
     </div>   
     );
 }
