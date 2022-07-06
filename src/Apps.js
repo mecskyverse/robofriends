@@ -20,7 +20,7 @@ onserchchange = (event) => {
 componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
-    .then(users => this.setState({robots:users}))
+    .then(users => this.setState ({robots:users}));
     } 
 
 
@@ -30,16 +30,23 @@ render(){
         return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
 
 })
-
-
+if(this.state.robots.length===0){
+    <h1>Loading...</h1>
+}
+else {
 
     return(
-    <div className='tc'>
-    <h1 className='f1'>RoboFriends</h1>
-    <Searchbox searchchange={this.onserchchange}/>
-    <Cardlist robots={filterrobots}/>
-    </div>   
-    );
+        <div className='tc'>
+        <h1 className='f1'>RoboFriends</h1>
+        <Searchbox searchchange={this.onserchchange}/>
+        <Cardlist robots={filterrobots}/>
+        </div>   
+        );
+}
+
+
+
+    
 }
 }
 export default Apps;
