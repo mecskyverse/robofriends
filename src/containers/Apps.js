@@ -26,13 +26,14 @@ class Apps extends React.Component {
 
 
     render() {
-        const filterrobots = this.state.robots.filter(robot => {
-            return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+        const { robots,searchfield } =this.state;
+        const filterrobots = robots.filter(robot => {
+            return robot.name.toLowerCase().includes(searchfield.toLowerCase());
 
         })
 
 
-        return (!this.state.robots.length) ?
+        return (! robots.length) ?
             <h1>Loading...</h1>
             : (
                 <div className='tc'>
