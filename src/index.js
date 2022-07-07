@@ -4,8 +4,7 @@ import './index.css';
 import 'tachyons';
 import Apps from './Apps.js'
 import reportWebVitals from './reportWebVitals';
-import Cardlist from './Cardlist.js'
-import {robots} from './robots'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
