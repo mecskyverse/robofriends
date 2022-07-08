@@ -3,6 +3,7 @@ import Scroll from '../components/scroll.js'
 import React from 'react'
 import Searchbox from '../components/search.jsx'
 import './App.css'
+import Errorcatch from './ErrorRecord.jsx'
 class Apps extends React.Component {
     constructor() {
         super();
@@ -40,7 +41,9 @@ class Apps extends React.Component {
                     <h1 className='f1'>RoboFriends</h1>
                     <Searchbox searchchange={this.onserchchange} />
                     <Scroll >
-                        <Cardlist robots={filterrobots} />
+                        <Errorcatch>
+                       <Cardlist robots={filterrobots} />
+                       </Errorcatch>
                     </Scroll>
                 </div>
             );
